@@ -1,0 +1,19 @@
+{
+  "version": "0.2.0",
+  "configurations": [
+    {
+      "type": "lldb",
+      "request": "launch",
+      "name": "Debug 'run' for current file",
+      "cargo": {
+        "args": ["build", "--bin=run"],
+        "filter": {
+          "name": "run",
+          "kind": "bin"
+        }
+      },
+      "args": ["${fileBasenameNoExtension}"],
+      "cwd": "${workspaceFolder}"
+    }
+  ]
+}
