@@ -10,5 +10,4 @@ macro_rules! export_solutions {
     );
 }
 
-export_solutions!(
-);
+export_solutions!(day1_p1, day1_p2);
