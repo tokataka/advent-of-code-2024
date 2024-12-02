@@ -23,14 +23,14 @@ fn main() {
         }
 
         let input_file = format!("resource/input/{}.txt", name.split('_').next().unwrap());
-        let input = fs::read_to_string(input_file).unwrap();
+        let input = fs::read_to_string(input_file).expect("Input file does not exist in 'resource/input/'");
 
         let mut elapsed_time_sum = 0.0;
         let mut elapsed_time_min = f64::MAX;
         let mut elapsed_time_max = f64::MIN;
 
         for _ in 0..ITERATION_COUNT {
-            let lines = input.lines().collect();
+            let lines = input.trim().lines().collect();
 
             let start_time = Instant::now();
 
@@ -39,14 +39,8 @@ fn main() {
             let elapsed_time = start_time.elapsed().as_secs_f64();
 
             elapsed_time_sum += elapsed_time;
-
-            if elapsed_time < elapsed_time_min {
-                elapsed_time_min = elapsed_time;
-            }
-
-            if elapsed_time > elapsed_time_max {
-                elapsed_time_max = elapsed_time;
-            }
+            elapsed_time_min = elapsed_time_min.min(elapsed_time);
+            elapsed_time_max = elapsed_time_max.max(elapsed_time);
         }
 
         let mut elapsed_time_avg = elapsed_time_sum / ITERATION_COUNT as f64;

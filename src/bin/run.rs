@@ -10,9 +10,9 @@ fn main() {
     for (name, solution) in solutions() {
         if name == solution_name {
             let input_file = format!("resource/input/{}.txt", name.split('_').next().unwrap());
-            let input = fs::read_to_string(input_file).unwrap();
+            let input = fs::read_to_string(input_file).expect("Input file does not exist in 'resource/input/'");
 
-            println!("{}", solution(input.lines().collect()));
+            println!("{}", solution(input.trim().lines().collect()));
         }
     }
 }

@@ -1,13 +1,31 @@
 {
-	"New AoC Solution": {
-		"scope": "rust",
-		"prefix": "solution",
-		"body": [
-			"pub fn solution(lines: Vec<&str>) -> String {",
-			"    $0",
-			"",
-			"    \"\".to_string()",
-			"}",
-		]
-	}
+  "New AoC Solution": {
+    "scope": "rust",
+    "prefix": "solution",
+    "body": [
+      "pub fn solution(lines: Vec<&str>) -> String {",
+      "    $0",
+      "",
+      "    \"\".to_string()",
+      "}",
+      "",
+      "#[cfg(test)]",
+      "mod tests {",
+      "    use super::solution;",
+      "",
+      "    #[test]",
+      "    fn test_${TM_FILENAME_BASE}() {",
+      "        let lines = \"",
+      "",
+      "        \"",
+      "        .trim()",
+      "        .split('\\n')",
+      "        .map(|x| x.trim())",
+      "        .collect();",
+      "",
+      "        assert_eq!(solution(lines), \"\");",
+      "    }",
+      "}"
+    ]
+  }
 }

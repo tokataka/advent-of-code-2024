@@ -20,3 +20,26 @@ pub fn solution(lines: Vec<&str>) -> String {
 
     result.to_string()
 }
+
+#[cfg(test)]
+mod tests {
+    use super::solution;
+
+    #[test]
+    fn test_day1_p2() {
+        let lines = "
+            3   4
+            4   3
+            2   5
+            1   3
+            3   9
+            3   3
+        "
+        .trim()
+        .split('\n')
+        .map(|x| x.trim())
+        .collect();
+
+        assert_eq!(solution(lines), "31");
+    }
+}
