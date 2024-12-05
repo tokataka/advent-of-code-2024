@@ -10,4 +10,6 @@ macro_rules! export_solutions {
     );
 }
 
-export_solutions!(day1_p1, day1_p2, day2_p1, day2_p2, day3_p1, day3_p2, day4_p1, day4_p2);
+export_solutions!(
+    day1_p1, day1_p2, day2_p1, day2_p2, day3_p1, day3_p2, day4_p1, day4_p2, day5_p1, day5_p2,
+);
