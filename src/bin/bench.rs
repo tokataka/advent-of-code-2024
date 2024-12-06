@@ -12,18 +12,19 @@ fn main() {
 
     println!("Result of 100 iterations");
     println!();
-    println!("| Solution Name |        Average |            Min |            Max |");
-    println!("| ------------- | -------------: | -------------: | -------------: |");
+    println!("| Solution Name |      Average |          Min |          Max |");
+    println!("| ------------- | -----------: | -----------: | -----------: |");
 
     for (name, solution) in solutions() {
         if let Some(solution_names) = solution_names {
-            if solution_names.iter().all(|x| x != name) {
+            if !solution_names.is_empty() && solution_names.iter().all(|x| x != name) {
                 continue;
             }
         }
 
         let input_file = format!("resource/input/{}.txt", name.split('_').next().unwrap());
-        let input = fs::read_to_string(input_file).expect("Input file does not exist in 'resource/input/'");
+        let input =
+            fs::read_to_string(input_file).expect("Input file does not exist in 'resource/input/'");
 
         let mut elapsed_time_sum = 0.0;
         let mut elapsed_time_min = f64::MAX;
@@ -49,6 +50,16 @@ fn main() {
         elapsed_time_min *= 1_000_000.0;
         elapsed_time_max *= 1_000_000.0;
 
-        println!("| {name:<13} | {elapsed_time_avg:>12.3}µs | {elapsed_time_min:>12.3}µs | {elapsed_time_max:>12.3}µs |");
+        let get_time_unit = |t| match t {
+            t if t >= 1_000.0 => format!("{:>9.3} ms", t / 1_000.0),
+            t => format!("{:>9.3} µs", t),
+        };
+
+        println!(
+            "| {name:<13} | {} | {} | {} |",
+            get_time_unit(elapsed_time_avg),
+            get_time_unit(elapsed_time_min),
+            get_time_unit(elapsed_time_max),
+        );
     }
 }
