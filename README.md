@@ -72,6 +72,8 @@ Result of 100 iterations
 | day14_p2      |   123.209 ms |   122.309 ms |   128.192 ms |
 | day15_p1      |   449.884 µs |   434.597 µs |   638.870 µs |
 | day15_p2      |     1.478 ms |     1.443 ms |     1.716 ms |
+| day16_p1      |     2.950 ms |     2.875 ms |     3.178 ms |
+| day16_p2      |    66.359 ms |    65.207 ms |    74.299 ms |
 
 ## License
 
