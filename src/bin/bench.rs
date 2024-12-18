@@ -44,16 +44,9 @@ fn main() {
             elapsed_time_max = elapsed_time_max.max(elapsed_time);
         }
 
-        let mut elapsed_time_avg = elapsed_time_sum / ITERATION_COUNT as f64;
+        let elapsed_time_avg = elapsed_time_sum / ITERATION_COUNT as f64;
 
-        elapsed_time_avg *= 1_000_000.0;
-        elapsed_time_min *= 1_000_000.0;
-        elapsed_time_max *= 1_000_000.0;
-
-        let get_time_unit = |t| match t {
-            t if t >= 1_000.0 => format!("{:>9.3} ms", t / 1_000.0),
-            t => format!("{:>9.3} µs", t),
-        };
+        let get_time_unit = |t| format!("{:>9.3} ms", t * 1_000.0);
 
         println!(
             "| {name:<13} | {} | {} | {} |",
