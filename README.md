@@ -78,6 +78,8 @@ Result of 100 iterations
 | day17_p2      |     0.009 ms |     0.008 ms |     0.023 ms |
 | day18_p1      |     0.655 ms |     0.636 ms |     0.796 ms |
 | day18_p2      |     0.781 ms |     0.755 ms |     0.956 ms |
+| day19_p1      |     2.578 ms |     2.291 ms |     2.953 ms |
+| day19_p2      |     5.387 ms |     4.769 ms |     6.489 ms |
 
 ## License
 
