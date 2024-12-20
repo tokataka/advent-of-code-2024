@@ -80,6 +80,8 @@ Result of 100 iterations
 | day18_p2      |     0.781 ms |     0.755 ms |     0.956 ms |
 | day19_p1      |     2.578 ms |     2.291 ms |     2.953 ms |
 | day19_p2      |     5.387 ms |     4.769 ms |     6.489 ms |
+| day20_p1      |     0.485 ms |     0.467 ms |     0.705 ms |
+| day20_p2      |    40.273 ms |    39.701 ms |    42.464 ms |
 
 ## License
 
