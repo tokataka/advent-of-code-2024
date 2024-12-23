@@ -86,6 +86,8 @@ Result of 100 iterations
 | day21_p2      |     2.035 ms |     1.981 ms |     2.616 ms |
 | day22_p1      |   357.707 ms |   354.977 ms |   365.498 ms |
 | day22_p2      |  1134.709 ms |  1127.427 ms |  1169.248 ms |
+| day23_p1      |     2.824 ms |     2.736 ms |     3.850 ms |
+| day23_p2      |   159.300 ms |   157.630 ms |   163.206 ms |
 
 ## License
 
